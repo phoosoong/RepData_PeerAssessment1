@@ -65,7 +65,7 @@ sum(!complete.cases(activity))
 
 2. Devise a strategy for filling in **all** of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 ```{r}
-## before we impute, let's look at characteristic of the row with  missing data, this will help us choosing the imputation strategy
+## before we impute, let's look at characteristic of the row with missing data, this will help us choosing the imputation strategy
 NAs <- !complete.cases(activity) 
 NAsPerDay <- aggregate(NAs, by = list(activity$date), FUN = sum)
 names(NAsPerDay) <- c("date","Count")
